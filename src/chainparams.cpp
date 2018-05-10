@@ -103,7 +103,7 @@ public:
         pchMessageStart[3] = 0xcc;
         nDefaultPort = 20946;
 
-        genesis = RECteGenesisBlock(1525946516, 741491, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1525946516, 741491, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         printf("%s\n", genesis.GetHash().ToString().c_str());
@@ -203,7 +203,7 @@ public:
         nDefaultPort = 11946;
         nPruneAfterHeight = 1000;
 
-        genesis = RECteGenesisBlock(1525946516, 201857, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1525946516, 201857, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         //printf("%s\n", genesis.GetHash().ToString().c_str());
         assert(consensus.hashGenesisBlock == uint256S("0x6b8df01948eb6a90f947f99afd4d593b65f9feb7b98a9ba4e372da7d33142c2e"));
@@ -297,7 +297,7 @@ public:
         nDefaultPort = 19444;
         nPruneAfterHeight = 1000;
 
-        genesis = RECteGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         printf("%s\n", genesis.GetHash().ToString().c_str());
         assert(consensus.hashGenesisBlock == uint256S("0x069928a84afce6486bebb795b47a6ea5109ad2645f8135bbc46bb6220ab04857"));
