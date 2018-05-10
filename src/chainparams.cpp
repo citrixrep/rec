@@ -208,8 +208,8 @@ public:
         printf("%s\n", genesis.GetHash().ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
 	    
-        assert(consensus.hashGenesisBlock == uint256S("0x00000000c2681103f1598a32fdb0b59a360d86b6342806d9e5010a534b882d1e"));
-        assert(genesis.hashMerkleRoot == uint256S("0x6df527fcdea8b2fd7d09774a93bca24ee653c071fe240c052b06b27ca52fe297"));
+        assert(consensus.hashGenesisBlock == uint256S("0x65215be7f0624cb021e6e05edfd153442fb7297b075845d8d8fbdab5812698ac"));
+        assert(genesis.hashMerkleRoot == uint256S("0xb81184cc9bb887a5d1525bbde52801f88e5e4ddf47f2ef30d0808d194c8d7dae"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -303,8 +303,8 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         printf("%s\n", genesis.GetHash().ToString().c_str());
 	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0x00000000c2681103f1598a32fdb0b59a360d86b6342806d9e5010a534b882d1e"));
-        assert(genesis.hashMerkleRoot == uint256S("0x6df527fcdea8b2fd7d09774a93bca24ee653c071fe240c052b06b27ca52fe297"));
+        assert(consensus.hashGenesisBlock == uint256S("0x65215be7f0624cb021e6e05edfd153442fb7297b075845d8d8fbdab5812698ac"));
+        assert(genesis.hashMerkleRoot == uint256S("0xb81184cc9bb887a5d1525bbde52801f88e5e4ddf47f2ef30d0808d194c8d7dae"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
