@@ -103,13 +103,13 @@ public:
         pchMessageStart[3] = 0xcc;
         nDefaultPort = 20946;
 
-        genesis = CreateGenesisBlock(1525946516, 3443508825, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1525946516, 3444108924, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         printf("%s\n", genesis.GetHash().ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0x65215be7f0624cb021e6e05edfd153442fb7297b075845d8d8fbdab5812698ac"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb81184cc9bb887a5d1525bbde52801f88e5e4ddf47f2ef30d0808d194c8d7dae"));
+        assert(consensus.hashGenesisBlock == uint256S("0x549683433939053ec8679cb6dc7df7d3a3f9963b5fe9405d8de2f4ebe95df8da"));
+        assert(genesis.hashMerkleRoot == uint256S("0x405e0b79d0fd36dc32c58252637a28dab539eaa8e4f061341099f3bc1f94bd7b"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.push_back(CDNSSeedData("51.38.0.58", true));
@@ -208,8 +208,8 @@ public:
         printf("%s\n", genesis.GetHash().ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
 	    
-        assert(consensus.hashGenesisBlock == uint256S("0x65215be7f0624cb021e6e05edfd153442fb7297b075845d8d8fbdab5812698ac"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb81184cc9bb887a5d1525bbde52801f88e5e4ddf47f2ef30d0808d194c8d7dae"));
+        assert(consensus.hashGenesisBlock == uint256S("0xfb2fd09ecaaa4463ed01f8e9294a9724612bf2d060b671329fda1d038a6fb298"));
+        assert(genesis.hashMerkleRoot == uint256S("0x405e0b79d0fd36dc32c58252637a28dab539eaa8e4f061341099f3bc1f94bd7b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -303,8 +303,8 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         printf("%s\n", genesis.GetHash().ToString().c_str());
 	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0xd643ed661052ca6aa63396d912f744f64010a8fb13c49e581c4b5505dc5c4d4c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb81184cc9bb887a5d1525bbde52801f88e5e4ddf47f2ef30d0808d194c8d7dae"));
+        assert(consensus.hashGenesisBlock == uint256S("0xb66aa1970b07f6bb1a5f28a4a91d27b884c12b9271585a931aed34c1ec16f84b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x405e0b79d0fd36dc32c58252637a28dab539eaa8e4f061341099f3bc1f94bd7b"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
