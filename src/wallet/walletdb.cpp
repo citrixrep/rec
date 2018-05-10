@@ -885,7 +885,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKe
                             filename.c_str(),   // Filename
                             "main",             // Logical db name
                             DB_BTREE,           // Database type
-                            DB_RECTE,          // Flags
+                            DB_CREATE,          // Flags
                             0);
     if (ret > 0)
     {
