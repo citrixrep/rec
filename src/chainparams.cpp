@@ -41,7 +41,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "Trump rep els tres nord-americans alliberats per Corea del Nord";
-    const CScript genesisOutputScript = CScript() << ParseHex("0417ddd538af0190154aa890b3fe03baffc4ac19a9a0762f4ea16cc0308ddb91c9dbba5109cedf1be1bd1dc4b34f3b8a7553d22f0cbe82b31748bfdcd518bd61c1") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("410417ddd538af0190154aa890b3fe03baffc4ac19a9a0762f4ea16cc0308ddb91c9dbba5109cedf1be1bd1dc4b34f3b8a7553d22f0cbe82b31748bfdcd518bd61c1ac") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -103,13 +103,13 @@ public:
         pchMessageStart[3] = 0xcc;
         nDefaultPort = 20946;
 
-        genesis = CreateGenesisBlock(1525946516, 741491, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1525946516, 3443508825, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
         printf("%s\n", genesis.GetHash().ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0xade88d1c6cb65e870eacd89a5535f853bc05843bd3e6ebd11d165b590bb7d682"));
-        assert(genesis.hashMerkleRoot == uint256S("0x405e0b79d0fd36dc32c58252637a28dab539eaa8e4f061341099f3bc1f94bd7b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000c2681103f1598a32fdb0b59a360d86b6342806d9e5010a534b882d1e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6df527fcdea8b2fd7d09774a93bca24ee653c071fe240c052b06b27ca52fe297"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.push_back(CDNSSeedData("51.38.0.58", true));
@@ -203,13 +203,13 @@ public:
         nDefaultPort = 11946;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1525946516, 201857, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1525946516, 3443508825, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         printf("%s\n", genesis.GetHash().ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
 	    
-        assert(consensus.hashGenesisBlock == uint256S("0xd052149ae3ea317235b25b733cbffbed061faea224f5ec7df8e3b2821ddb1369"));
-        assert(genesis.hashMerkleRoot == uint256S("0x405e0b79d0fd36dc32c58252637a28dab539eaa8e4f061341099f3bc1f94bd7b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000c2681103f1598a32fdb0b59a360d86b6342806d9e5010a534b882d1e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6df527fcdea8b2fd7d09774a93bca24ee653c071fe240c052b06b27ca52fe297"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -299,12 +299,12 @@ public:
         nDefaultPort = 19444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1525946516, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         printf("%s\n", genesis.GetHash().ToString().c_str());
 	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0xa7eb4eccf9237d0a803b307cf753be8ba9664d37b629a8913752d5c59b35d974"));
-        assert(genesis.hashMerkleRoot == uint256S("0x405e0b79d0fd36dc32c58252637a28dab539eaa8e4f061341099f3bc1f94bd7b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000c2681103f1598a32fdb0b59a360d86b6342806d9e5010a534b882d1e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6df527fcdea8b2fd7d09774a93bca24ee653c071fe240c052b06b27ca52fe297"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -314,10 +314,10 @@ public:
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
 
-        checkpointData = (CCheckpointData){
+        /*checkpointData = (CCheckpointData){
                 boost::assign::map_list_of
                         ( 0, uint256S("0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"))
-        };
+        };*/
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
