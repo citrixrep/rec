@@ -96,7 +96,7 @@ bool CDBEnv::Open(const boost::filesystem::path& pathIn)
     dbenv->set_flags(DB_TXN_WRITE_NOSYNC, 1);
     dbenv->log_set_config(DB_LOG_AUTO_REMOVE, 1);
     int ret = dbenv->open(strPath.c_str(),
-                         DB_RECTE |
+                         DB_CREATE |
                              DB_INIT_LOCK |
                              DB_INIT_LOG |
                              DB_INIT_MPOOL |
@@ -130,7 +130,7 @@ void CDBEnv::MakeMock()
     dbenv->set_flags(DB_AUTO_COMMIT, 1);
     dbenv->log_set_config(DB_LOG_IN_MEMORY, 1);
     int ret = dbenv->open(NULL,
-                         DB_RECTE |
+                         DB_CREATE |
                              DB_INIT_LOCK |
                              DB_INIT_LOG |
                              DB_INIT_MPOOL |
@@ -248,7 +248,7 @@ CDB::CDB(const std::string& strFilename, const char* pszMode, bool fFlushOnClose
     bool fRECte = strchr(pszMode, 'c') != NULL;
     unsigned int nFlags = DB_THREAD;
     if (fRECte)
-        nFlags |= DB_RECTE;
+        nFlags |= DB_CREATE;
 
     {
         LOCK(bitdb.cs_db);
@@ -372,7 +372,7 @@ bool CDB::Rewrite(const string& strFile, const char* pszSkip)
                                             strFileRes.c_str(), // Filename
                                             "main",             // Logical db name
                                             DB_BTREE,           // Database type
-                                            DB_RECTE,          // Flags
+                                            DB_CREATE,          // Flags
                                             0);
                     if (ret > 0) {
                         LogPrintf("CDB::Rewrite: Can't create database file %s\n", strFileRes);
