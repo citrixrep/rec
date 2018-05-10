@@ -16,7 +16,7 @@
 
 #include "chainparamsseeds.h"
 
-static CBlock RECteGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     CMutableTransaction txNew;
     txNew.nVersion = 1;
@@ -38,11 +38,11 @@ static CBlock RECteGenesisBlock(const char* pszTimestamp, const CScript& genesis
 }
 
 
-static CBlock RECteGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "Trump rep els tres nord-americans alliberats per Corea del Nord";
     const CScript genesisOutputScript = CScript() << ParseHex("0417ddd538af0190154aa890b3fe03baffc4ac19a9a0762f4ea16cc0308ddb91c9dbba5109cedf1be1bd1dc4b34f3b8a7553d22f0cbe82b31748bfdcd518bd61c1") << OP_CHECKSIG;
-    return RECteGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
+    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
 
