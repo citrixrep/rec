@@ -99,7 +99,7 @@ public:
          */
         pchMessageStart[0] = 0xcc;
         pchMessageStart[1] = 0xcc;
-        pchMessageStart[2] = 0xcc;
+        pchMessageStart[2] = 0xca;
         pchMessageStart[3] = 0xcc;
         nDefaultPort = 20946;
 
@@ -144,14 +144,14 @@ public:
             }
         };
         */
-        chainTxData = ChainTxData{
+      /*  chainTxData = ChainTxData{
             // Data as of block 000000000000982e7127de07a8f6e3aa8d9198612fb80bf9e14c6c8dfe98f991 (height 99458).
             1513084748, // * UNIX timestamp of last known number of transactions
             181521,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             0.009316965     // * estimated number of transactions per second after that timestamp
         };
-
+*/
 
     }
 };
@@ -232,11 +232,11 @@ public:
         fRequireStandard = false;
         fMineBlocksOnDemand = false;
 
-
+/*
 	checkpointData = (CCheckpointData){
                 boost::assign::map_list_of
                         ( 0, uint256S("0xae48f41a796dfffad00bfdb10c6597cb380f5a49681ced87777084cd75076c6f"))
-};
+};*/
         /*checkpointData = (CCheckpointData) {
             {
                 {  10000, uint256S("0x0000000056b647612ebb86a3801355434bfd35b154470216c99349e46fce9f04")},
@@ -250,14 +250,14 @@ public:
                 {  90000, uint256S("0x0000006d394f7e082f639fa1a679a8d5b0f971b2738fbeaf860df3a0c833c341")},
             }
         };*/
-        
+        /*
         chainTxData = ChainTxData{
             // Data as of block 000000258f125f49ec0ef3d24b043e597941c9decd53b43c44d36b613ab331e1 (height 91140).
             1513085882, // * UNIX timestamp of last known number of transactions
             0,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             0     // * estimated number of transactions per second after that timestamp
-        };
+        };*/
     }
 };
 static CTestNetParams testNetParams;
