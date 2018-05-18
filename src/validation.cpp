@@ -1169,9 +1169,9 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 
     //RECtivechain reward design with fibonachi progress the firt year
     if(nHeight < 2) // The first block pre-mine, for the manteniance of the plattform and incentive the content publication
-        nSubsidy = 12226641 * COIN;
+        nSubsidy = 99999995 * COIN;
     if(nHeight <= 6765 && nHeight > 1)
-        nSubsidy = 87773161 * COIN;
+        nSubsidy = 1 * COIN;
 	
     return nSubsidy;
 }
